@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="UTF-8" />
+	<title>ユーザー登録</title>
+	<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+	<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"/></script>
+	<link rel="stylesheet"
+	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+	<script src="/js/common.js" th:src="@{/js/common.js}"></script>
+	</head>
+	
+	<body>
+	<div id = "adminPage">
+	<form name="addUserForm" id="addUserForm" method="post"
+	action="/ecsite/admin/newuser" th:action="@{/ecsite/admin/newuser}">
+	<h1>User name:<input type="text" name="newUserName" autocomplete="username"/></h1>
+	<h1>fullName:<input type="text" name="newFullName" autocomplete="username"/></h1>
+	<h1>password:<input type="password" name="newpassword" autocomplete="current-password"/></h1>
+	<button type="submit">登録</button>
+	<input type="hidden" name="userName" th:value="${userName}"/>
+	<input type="hidden" name="password" th:value="${password}"/>
+	</form>
+	</div>
+	</body>
+	</html>
+
